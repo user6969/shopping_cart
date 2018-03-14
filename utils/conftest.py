@@ -2,7 +2,7 @@ import pytest
 import csv
 from selenium import webdriver
 
-TEST_DATA = 'test_data/test_data.csv'
+TEST_DATA = 'test_data.csv'
 
 
 @pytest.yield_fixture(scope='session')
