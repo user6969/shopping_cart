@@ -1,4 +1,6 @@
 .idea/
 *.pyc
-*/.cache/
+.cache/*
 *.png
+test_data/
+tests/.cache/

@@ -5,13 +5,14 @@ from utils.base_page import *
 URL = 'https://market.yandex.ru'
 
 
-def test_market(browser):
+@pytest.mark.parametrize('user_name, password', parameters())
+def test_market(browser, user_name, password):
     browser.maximize_window()
     browser.get(URL)
     start_page = StartPage(browser)
     start_page.take_screenshot('screenshots/1.png')
     login_page = start_page.set_region(region=u'Москва').login()
-    home_page = login_page.enter_username('email@yandex.ru').enter_password('password').sign_in()
+    home_page = login_page.enter_username(user_name).enter_password(password).sign_in()
     assert home_page.is_loaded()
     login_page.take_screenshot('screenshots/2.png')
     results_page = home_page.search('iphone 7 128Gb').expand_results()
