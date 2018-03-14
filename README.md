@@ -11,4 +11,5 @@
 1. clone project
 2. cd to to project location
 3. install dependencies 'pip install requirements.txt'
-4. to run test use 'python -m pytest tests/test_ya.py'
+4. add test_data.csv to project root folder. File contains username/password in csv format (test@yandex.ru,password). Note: no quotes required
+5. to run test use 'python -m pytest tests/test_ya.py'
